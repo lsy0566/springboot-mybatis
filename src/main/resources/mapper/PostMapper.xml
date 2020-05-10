@@ -6,8 +6,8 @@
 <mapper namespace="com.example.springbootmybatis.repository.PostMapper">
     <select id="selectAllPosts"
             resultType="com.example.springbootmybatis.entity.Posts">
-        select id, user_id, title, createAt from posts
-        order by id desc
+        select id, user_id, title, contents, createdAt from posts
+        order by id
     </select>
     <select id="selectAllByUser_id"
             resultType="com.example.springbootmybatis.entity.Posts"
@@ -18,17 +18,13 @@
     <select id="selectPostById"
             resultType="com.example.springbootmybatis.entity.Posts"
             parameterType="string">
-        select id, user_id, title, contents,createAt from posts
+        select id, user_id, title, contents, createAt from posts
         where id=#{id}
     </select>
     <insert id="insertPost"
             parameterType="com.example.springbootmybatis.entity.Posts">
         insert into posts(id, user_id, title, contents) values(#{id}, #{user_id}, #{title}, #{contents})
     </insert>
-    <update id="updatePost"
-            parameterType="com.example.springbootmybatis.entity.Posts">
-        update posts set title=#{title}, contents=#{contents} where id=#{id}
-    </update>
     <delete id="deletePost"
             parameterType="string">
         delete from posts where id=#{id}

@@ -22,17 +22,17 @@ public class PostServiceImpl implements PostService {
         return mapper.selectPostById(id);
     }
 
-    @Override
+    @Override   //게시물 생성
     public int createPost(Posts post) {
         return mapper.insertPost(post);
     }
 
-    @Override
+    @Override   //게시물 삭제
     public int removePost(String id) {
         return mapper.deletePost(id);
     }
 
-    @Override
+    @Override   //사용자 목록 조회
     public Posts getAllByUser_id() {
         return mapper.selectAllByUser_id();
     }

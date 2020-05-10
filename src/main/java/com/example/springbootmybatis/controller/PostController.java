@@ -3,9 +3,7 @@ package com.example.springbootmybatis.controller;
 import com.example.springbootmybatis.entity.Posts;
 import com.example.springbootmybatis.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,7 +12,11 @@ public class PostController {
     @Autowired
     PostService service;
 
-    @PostMapping("")
+//    @PostMapping("/posts/{id}")
+//    public Posts createPost(@RequestBody Posts post) {
+//        Posts createdPost = service.createPost();
+//
+//    }
 
     @GetMapping("/posts")
     public List<Posts> getAllPosts() {
@@ -22,5 +24,9 @@ public class PostController {
 
         return list;
     }
+//   @DeleteMapping("/posts/{id}")
+
+//   @GetMapping("/posts/{id}")
+//    public Posts getPosts
 
 }

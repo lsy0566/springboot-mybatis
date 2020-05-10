@@ -15,7 +15,11 @@ public class Posts {
     private String user_id;
     private String title;
     private String contents;
-    private String del_yn;
-    private Date createAt;
+    private Date createdAt;
 
+    public Posts(String id, String user_id, String title, String contents) {
+        this.user_id = user_id;
+        this.title = title;
+        this.contents = contents;
+    }
 }
